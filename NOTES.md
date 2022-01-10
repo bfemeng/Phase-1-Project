@@ -1,6 +1,6 @@
 What do I want to do?
 # TV Trivia
-*Create an app tat displays TV Show information
+*Create an app that displays TV Show information
 
 
 
