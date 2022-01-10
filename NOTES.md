@@ -5,10 +5,11 @@ What do I want to do?
 
 
 ### Overview 
-
+Instant TV show info.
 
 ### Features
+* TV show name (MVP)
+* Display info (MVP)
+Click links to display info in a list (MVP)
 
 
-
-### MVP
