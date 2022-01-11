@@ -4,16 +4,24 @@ const homePageLink = () => document.getElementById('home-page-link');
 
 const tvShowSearchLink = () => document.getElementById('tv-show-search-link');
 
-
     
    function searchShow(query) {
        const url = `https://api.tvmaze.com/search/shows?q=${query}`;
-       fetch(url)
-        .then(response => response.json())
+       fetch(`https://api.tvmaze.com/search/shows?q=${query}`, {
+       method: "GET",
+       headers: {
+         "Content-Type": "application/json",
+         Accept: "application/json",
+       },
+       body: JSON.stringify({
+         showName: "Girls",
+       }),
+    }).then(response => response.json())
         .then((jsonData) => {
      console.log(jsonData);
     });
 }
+
 
   const homePageLinkEvent = () => {
       homePageLink().addEventListener('click', () => {
