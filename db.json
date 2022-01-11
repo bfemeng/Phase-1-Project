@@ -1,19 +1,18 @@
 {
-  "posts": [
+  "Title": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "show": "Golden Girls",
+      "genre": "comedy",
+      "website": "www.goldengirls.com",
+      "summary": "Antics of four friends"
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": 2,
+      "show": "Game of Thrones",
+      "genre": "drama",
+      "website": "www.got.com",
+      "summary": "Fighting for power"
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
