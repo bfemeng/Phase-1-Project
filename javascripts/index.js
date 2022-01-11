@@ -18,15 +18,13 @@ const tvShowSearchLink = () => document.getElementById('tv-show-search-link');
   //effect (display home page)?
   
   const homePageLinkEvent = () => {
-      homePageLink().addEventListener('click', (e) => {
-          e.preventDefault();
+      homePageLink().addEventListener('click', () => {
           renderHomePage();
         })
   }
 
   const tvShowSearchLinkEvent = () => {
-    tvShowSearchLink().addEventListener('click', (e) => {
-        e.preventDefault();
+    tvShowSearchLink().addEventListener('click', () => {
         renderTvShowSearch();
       })
 }
@@ -44,7 +42,7 @@ const homePageTemplate = () => {
 
 const showListTemplate = () => {
     return ` 
-    <h1 class="center-align">TV Shows/h1>
+    <h1 class="center-align">TV Shows</h1>
     <table class="highlight">
       <thead>
         <tr>
@@ -76,7 +74,7 @@ const renderHomePage = () => {
     mainDiv().innerHTML = homePageTemplate();
 }
 
-const renderShowListPage = () => {
+const renderTvShowSearch = () => {
     mainDiv().innerHTML = showListTemplate();
 } 
 
@@ -85,5 +83,5 @@ const renderShowListPage = () => {
 document.addEventListener('DOMContentLoaded', () => {
     //renderHomePage();
     homePageLinkEvent();
-    tvShowSearchLinkEvent
+    tvShowSearchLinkEvent();
 })
