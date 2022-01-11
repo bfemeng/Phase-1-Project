@@ -1,4 +1,6 @@
 /** Globals **/
+ const baseUrl = 'https://api.tvmaze.com/shows/1';
+ let shows = [];
 
 
 /** NODE Getters **/
@@ -10,12 +12,21 @@ const tvShowSearchLink = () => document.getElementById('tv-show-search-link');
 
 
 
-/** Event Listeners **/
+/** Event and Listeners **/
   //what time can I do this event (domcontentloaded?
 
   //what's going to trigger this event (click)?
   
   //effect (display home page)?
+
+const loadShows = () => {
+    fetch("https://api.tvmaze.com/shows/1")
+    .then(resp => resp => {
+        return resp.json()
+    })
+    .then(data => { 
+        shows = data
+})
   
   const homePageLinkEvent = () => {
       homePageLink().addEventListener('click', () => {
@@ -24,11 +35,12 @@ const tvShowSearchLink = () => document.getElementById('tv-show-search-link');
   }
 
   const tvShowSearchLinkEvent = () => {
-    tvShowSearchLink().addEventListener('click', () => {
+    tvShowSearchLink().addEventListener('click', async () => {
+        await loadShows
         renderTvShowSearch();
       })
 }
-
+console.log('a')
 
 /*********/
 
@@ -84,4 +96,5 @@ document.addEventListener('DOMContentLoaded', () => {
     //renderHomePage();
     homePageLinkEvent();
     tvShowSearchLinkEvent();
+    loadShows();
 })
