@@ -7,29 +7,38 @@ const tvShowSearchLink = () => document.getElementById('tv-show-search-link');
     
    function searchShow(query) {
        const url = `https://api.tvmaze.com/search/shows?q=${query}`;
-       fetch(`https://api.tvmaze.com/search/shows?q=${query}`, {
-       method: "GET",
-       headers: {
-         "Content-Type": "application/json",
-         Accept: "application/json",
-       },
-       body: JSON.stringify({
-         showName: "Girls",
-       }),
-    }).then(response => response.json())
-        .then((jsonData) => {
-     console.log(jsonData);
+       fetch(url)
+       .then(response => response.json())
+       .then((results) => {
+     const list = document.getElementById("resultsList");
+     results.forEach(result => {
+       console.log(result)
+       const element = document.createElement("li");
+       element.innerText = result.show.name;
+       list.appendChild(element);
+     })
     });
 }
 
 
   const homePageLinkEvent = () => {
       homePageLink().addEventListener('click', () => {
-          renderHomePage();
+        resetForm();
+        hideResultsList()
         })
   }
 
+  function hideResultsList () {
+    const list = document.getElementById("resultsList");
+    list.innerHTML = ''
+  }
+
+  function resetForm () {
+    document.querySelector("form").reset();
+  }
+
   const tvShowSearch = (e) => {
+    hideResultsList();
     e.preventDefault();
     console.log(e.target.querySelector("input").value)
     searchShow(e.target.querySelector("input").value)
