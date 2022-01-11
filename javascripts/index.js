@@ -1,6 +1,4 @@
 /** Globals **/
- const shows = 'https://api.tvmaze.com/shows/1';
- //const shows = [];
 
 
 /** NODE Getters **/
@@ -19,89 +17,45 @@ const tvShowSearchLink = () => document.getElementById('tv-show-search-link');
   
   //effect (display home page)?
 
-//const loadShows = () => {
-  //  fetch("https://api.tvmaze.com/shows/1", shows)
-    //.then(resp => {
-      //  return resp.json()
-    //})
-    //.then(data => { 
-      //  shows = data
-//})
+    
+   function searchShow(query) {
+       const url = `https://api.tvmaze.com/search/shows?q=${query}`;
+       fetch(url)
+        .then(response => response.json())
+        .then((jsonData) => {
+     console.log(jsonData);
+    });
+}
 
-
-async function loadShows() {
-    const response = await fetch('https://api.tvmaze.com/shows/1');
-    var data = await response.json();
-    }
-
-  
   const homePageLinkEvent = () => {
       homePageLink().addEventListener('click', () => {
           renderHomePage();
         })
   }
 
-  const tvShowSearchLinkEvent = () => {
-    tvShowSearchLink().addEventListener('click', async () => {
-        await loadShows
-        renderTvShowSearch();
-      })
-}
-console.log(shows)
-
-/*********/
-
-/** Templates  **/
-
-const homePageTemplate = () => {
-    return `
-    <h1 class="center-align">TV Trivia Fans</h1>
-    `
-}
-
-const showListTemplate = () => {
-    return ` 
-    <h1 class="center-align">TV Shows</h1>
-    <table class="highlight">
-      <thead>
-        <tr>
-            <th>Show</th>
-            <th>Genre</th>
-            <th>Website</th>
-            <th>Rating</th>
-            <th>Summary</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <tr>
-          <td>TBA</td>
-          <td>TBA</td>
-          <td>TBA</td> 
-          <td>TBA</td> 
-          <td>TBA</td> 
-        </tr>
-      </tbody>
-    </table>
-    `
-}
+  const tvShowSearch = (e) => {
+    e.preventDefault();
+    console.log(e.target.querySelector("input").value)
+    searchShow(e.target.querySelector("input").value)
+    }
 
 
 /** Renderers **/
 
-const renderHomePage = () => {
-    mainDiv().innerHTML = homePageTemplate();
-}
+//const renderHomePage = () => {
+  //  mainDiv().innerHTML = homePageTemplate();
+//}
 
-const renderTvShowSearch = () => {
-    mainDiv().innerHTML = showListTemplate();
-} 
+//const renderSearchShow= = () => {
+    //mainDiv().innerHTML = showListTemplate();
+//} 
 
 /** When the DOM loads **/
 
 document.addEventListener('DOMContentLoaded', () => {
-    renderHomePage();
+    document.querySelector("form").addEventListener("submit", tvShowSearch)
+    //renderHomePage();
     homePageLinkEvent();
-    tvShowSearchLinkEvent();
-    loadShows();
 })
+
+//document.querySelector("form").querySelector("input").value
