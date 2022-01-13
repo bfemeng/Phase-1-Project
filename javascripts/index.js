@@ -16,6 +16,13 @@ const tvShowSearchLink = () => document.getElementById('tv-show-search-link');
        const element = document.createElement("li");
        element.innerText = result.show.name;
        list.appendChild(element);
+       var button = document.createElement("button");
+       button.innerHTML = "Do Something";
+       var body = document.getElementsByTagName("body")[0];
+       body.appendChild(button);
+      button.addEventListener ("click", function() {
+      alert("watched before");
+      });
      })
     });
 }
