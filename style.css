@@ -17,14 +17,38 @@ body{
     height: 80px;
     color: white;
   }
-  .btn:hover{ /* When your mouse on the btn it will change the color */
-    background-color: #17ff1f;
-  }
-  form.search input[type=text] {
+  .styled {
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: rgb(233, 78, 117);
+    background-image: linear-gradient(to top left,
+                                      rgba(0, 0, 0, .2),
+                                      rgba(0, 0, 0, .2) 30%,
+                                      rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+                inset -2px -2px 3px rgba(0, 0, 0, .6);
+}
+
+.styled:hover {
+    background-color: rgb(71, 182, 216);
+}
+
+.styled:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
+  type {
     padding: 10px;
     font-size: 17px;
     border: 1px solid rgb(10, 0, 0);
     float: left;
     width: 80%;
-    background: #f1f1f1;
+    background: #830909;
   }
