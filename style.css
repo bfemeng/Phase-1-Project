@@ -10,19 +10,15 @@ body{
     height: 80px;
     color: white;
   }
-  .btn{
-    background-color: #614caf; /* You can change what ever you want */
-    border: none;
+  .nav-wrapper{ /* you need div element to use this */
+    background-color: #7aa0c3;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 100%;
+    height: 80px;
     color: white;
-    padding: 12px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
   }
   .btn:hover{ /* When your mouse on the btn it will change the color */
-    background-color: #5ccc60;
+    background-color: #17ff1f;
   }
   form.search input[type=text] {
     padding: 10px;
