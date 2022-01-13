@@ -1,18 +1,20 @@
 body{
-    background-color: #d4b5b5;
+    background-color: #b1cadf;
     font-family: "Microsoft Sans Serif";
     color: white;
   }
   .container{ /* you need div element to use this */
     background-color: #7aa0c3;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: initial;
     width: 100%;
     height: 80px;
     color: white;
   }
   .nav-wrapper{ /* you need div element to use this */
-    background-color: #7aa0c3;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #02101d;
+    font-family: initial;
+    font-style: inherit;
+    font-size: larger;
     width: 100%;
     height: 80px;
     color: white;
