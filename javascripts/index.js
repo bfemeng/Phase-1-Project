@@ -50,4 +50,5 @@ document.addEventListener('DOMContentLoaded', () => {
     homePageLinkEvent();
 })
 
+
 //document.querySelector("form").querySelector("input").value
