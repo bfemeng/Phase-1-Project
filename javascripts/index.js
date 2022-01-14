@@ -17,7 +17,7 @@ const tvShowSearchLink = () => document.getElementById('tv-show-search-link');
        const element = document.createElement("li");
        element.innerText = result.show.name;
        const button = document.createElement("button");
-       button.innerHTML = "Watched before";
+       button.innerHTML = "Watched";
        list.appendChild(element);
        element.appendChild(button);
        button.addEventListener ("click", () => {
