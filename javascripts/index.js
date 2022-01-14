@@ -13,16 +13,16 @@ const tvShowSearchLink = () => document.getElementById('tv-show-search-link');
      const list = document.getElementById("resultsList");
      results.forEach(result => {
        console.log(result)
+       const body = document.getElementsByTagName("body")[0];
        const element = document.createElement("li");
        element.innerText = result.show.name;
+       const button = document.createElement("button");
+       button.innerHTML = "Watched before";
        list.appendChild(element);
-       var button = document.createElement("button");
-       button.innerHTML = "Do Something";
-       var body = document.getElementsByTagName("body")[0];
-       body.appendChild(button);
-      button.addEventListener ("click", function() {
-      alert("watched before");
-      });
+       button.appendChild(element);
+       button.addEventListener ("click", function() {
+        alert("You've seen this before.");
+        });
      })
     });
 }
@@ -43,6 +43,18 @@ const tvShowSearchLink = () => document.getElementById('tv-show-search-link');
   function resetForm () {
     document.querySelector("form").reset();
   }
+
+  function hideButton () {
+    const button = document.getElementById("button");
+    button.innerHTML = ''
+  }
+
+  const resetHomePage = () => {
+    homePageLink().addEventListener('click', () => {
+      resetForm();
+      hideResultsList()
+      })
+}
 
   const tvShowSearch = (e) => {
     hideResultsList();
