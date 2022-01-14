@@ -10,8 +10,8 @@ const tvShowSearchLink = () => document.getElementById('tv-show-search-link');
        fetch(url)
        .then(response => response.json())
        .then((results) => {
-     const list = document.getElementById("resultsList");
-     results.forEach(result => {
+     const list = document.getElementById("resultsList"); 
+      results.forEach(result => {
        console.log(result)
        const body = document.getElementsByTagName("body")[0];
        const element = document.createElement("li");
@@ -19,8 +19,8 @@ const tvShowSearchLink = () => document.getElementById('tv-show-search-link');
        const button = document.createElement("button");
        button.innerHTML = "Watched before";
        list.appendChild(element);
-       button.appendChild(element);
-       button.addEventListener ("click", function() {
+       element.appendChild(button);
+       button.addEventListener ("click", () => {
         alert("You've seen this before.");
         });
      })
