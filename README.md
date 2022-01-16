@@ -61,8 +61,8 @@ SOFTWARE.
 
 ### Authors and history
 
-Created by Shante Torees. A wife, mom, and dreamer. 
+Created by Shante Torres. A wife, mom, and dreamer. 
 
 ### Acknowledgements
 
-Thank you to TV Maze for the wonderful free public API. Thank you to MDN Web Docs for being a wonderful resource.
+Thank you to TV Maze for the wonderful free public API. Thank you to MDN Web Docs for being a wonderful resource in addition to my Flatiron Curriculum.
