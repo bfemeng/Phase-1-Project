@@ -39,7 +39,7 @@ A huge thank you to each of the Flatiron school staff that helped me when I was 
 
 MIT License
 
-Copyright (c) [2022] [Shante Torres]
+Copyright (c) 2022, Shante Torres
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
